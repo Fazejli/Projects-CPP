@@ -1,18 +1,19 @@
-#include <iostream>
-#include <iomanip>
-#include <string>
-
-int main(){
-    std::string str = "HI THIS IS BRAIN";
-    std::string* stringPTR = &str;
-    std::string& stringREF = str;
-
-    std::cout << "String address: " << &str << std::endl;
-    std::cout << "String's ptr address: " << stringPTR << std::endl;
-    std::cout << "String's ref address: " << &stringREF << std::endl;
-    std::cout << std::endl;
-    std::cout << "String value: " << str << std::endl;
-    std::cout << "String's ptr value: " << *stringPTR << std::endl;
-    std::cout << "String's ref value: " << stringREF << std::endl;
-
+int main()
+{
+{
+Weapon club = Weapon("crude spiked club");
+HumanA bob("Bob", club);
+bob.attack();
+club.setType("some other type of club");
+bob.attack();
+}
+{
+Weapon club = Weapon("crude spiked club");
+HumanB jim("Jim");
+jim.setWeapon(club);
+jim.attack();
+club.setType("some other type of club");
+jim.attack();
+}
+return 0;
 }
