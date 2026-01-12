@@ -7,6 +7,7 @@ HumanB::HumanB(std::string name){
 
 HumanB::~HumanB(void){
 }
+
 void HumanB::setWeapon(Weapon& weapon){
     _weapon = &weapon;
 }
@@ -16,7 +17,7 @@ void HumanB::attack(void){
         std::cout << _name << " has no weapon!" << std::endl;
     else
     {
-        std::cout << _name << " attacks with their ";
-        std::cout << _weapon.getType() << std::endl;
+            std::cout << _name << " attacks with their ";
+            std::cout << _weapon->getType() << std::endl;
     }
 }
