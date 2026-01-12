@@ -1,5 +1,5 @@
 NAME = replace
-TESTER = test
+TEST = tester
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp
@@ -15,18 +15,19 @@ $(NAME) : $(OBJS)
 %.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(TESTER): $(NAME) $(TEST_OBJS)
-	$(CXX) $(CXXFLAGS) $(TEST_OBJS) -o $(TESTER)
+$(TEST): $(NAME) $(TEST_OBJ)
+	$(CXX) $(CXXFLAGS) $(TEST_OBJ) -o $(TEST)
 
-test: $(TESTER)
-	./$(TESTER)
+test: $(TEST)
+	./$(TEST)
 
 clean :
 	rm -rf $(OBJS) $(TEST_OBJ)
-	rm -f test1.txt.replace test2.txt.replace test3.txt.replace
+	rm -rf $(wildcard tests/*.replace)
+	rm -rf $(wildcard *.replace)
 
 fclean : clean
-	rm -rf $(NAME) $(TESTER)
+	rm -rf $(NAME) $(TEST)
 	
 re : fclean all
 
