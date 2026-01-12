@@ -140,16 +140,12 @@ int main(){
     std::cout << " --------------------------------------------- " << std::endl;
     std::cout << "TEST 4 :" << std::endl;
     runErrorTest("- No input file",
-            "nonexistent.txt",
-            "test",
-            "TEST",
+            "./replace nonexistent.txt test TEST",
             "Error: cannot open file nonexistent.txt");
     std::cout << " --------------------------------------------- " << std::endl;
     std::cout << "TEST 5 :" << std::endl;
     runErrorTest("- Empty s1",
-            "tests/test1.txt",
-            "",
-            "TEST",
+            "./replace tests/test1.txt \"\" TEST",
             "Filename and <s1> can not be empty");
     std::cout << " --------------------------------------------- " << std::endl;
     return (0);
