@@ -42,7 +42,6 @@ void    runTest(const std::string& testName,
     std::cout << "Test " << testName << std::endl;
     std::cout << "File source: " << inputFile << std::endl;
     std::cout << "Replace <" << s1 << "> with <" << s2 << ">" << std::endl;
-    std::cout << "\n" << std::endl;
     std::string outputFile = inputFile + ".replace";
     std::string cmd = "./replace " + inputFile + " \"" + s1 + "\" \"" + s2 + "\" > /dev/null 2>&1";
     std::system(cmd.c_str());
@@ -53,7 +52,6 @@ void    runTest(const std::string& testName,
     }
     std::string result = readFile(outputFile);
     std::cout << "Result:" << std::endl;
-    std::cout << result << std::endl;
     if (result == expectedOutput)
         std::cout << "TEST PASSED!" << std::endl;
     else
@@ -61,6 +59,8 @@ void    runTest(const std::string& testName,
         std::cout << "TEST FAIL!" << std::endl;
         std::cout << "  Expected:" << std::endl;
         std::cout << "  \"" << expectedOutput << "\"" << std::endl;
+        std::cout << "Got : " << std::endl;
+        std::cout << "  \"" << result << "\"" << std::endl;
     }
     std::cout << std::endl;
 }
