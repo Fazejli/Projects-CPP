@@ -22,7 +22,7 @@ This is the first module of the C++ curriculum at 42. It introduces the fundamen
 
 ## ⚙️ Requirements
 
-- **Compiler:** `c++` (or `g++`)
+- **Compiler:** `c++`
 - **Standard:** C++98
 - **Compilation flags:** `-Wall -Wextra -Werror -std=c++98`
 
