@@ -1,9 +1,9 @@
 NAME = replace
+TESTER = test
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
-TEST = test
 TEST_SRC = test.cpp
 TEST_OBJ = $(TEST_SRC:.cpp=.o)
 
@@ -15,7 +15,7 @@ $(NAME) : $(OBJS)
 %.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(TEST): $(NAME) $(TEST_OBJS)
+$(TESTER): $(NAME) $(TEST_OBJS)
 	$(CXX) $(CXXFLAGS) $(TEST_OBJS) -o $(TEST)
 
 test: $(TEST)

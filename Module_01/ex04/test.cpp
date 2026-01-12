@@ -71,7 +71,7 @@ int main(){
     std::cout << "|      TESTS      |" << std::endl;
     std::cout << " ----------------- " << std::endl;
    
-    if (!fileExists("test1.txt") || !fileExists("test2.txt") || !fileExists("test3.txt"))
+    if (!fileExists("tests/test1.txt") || !fileExists("tests/test2.txt") || !fileExists("tests/test3.txt"))
     {
         std::cerr << "Error: test files (test1.txt, test2.txt, test3.txt) not found!" << std::endl;
         std::cerr << "Please create them before running tests." << std::endl;
