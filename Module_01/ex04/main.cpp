@@ -11,11 +11,11 @@ void    replaceFile(std::ifstream& fd, std::ofstream& outputFd, const std::strin
     while (std::getline(fd, line))
     {
         result = line;
-        i = result.find(s1, i);
-        if (i != std::string::npos)
+        i = 0;
+        while ((i = result.find(s1, i)) != std::string::npos)
         {
             result.erase(i, s1.length());
-            result.append(s2);
+            result.insert(i, s2);
             i += s2.length();
         }
         outputFd << result << std::endl;
@@ -41,13 +41,13 @@ int main(int ac, char **av)
         std::cerr << "Filename and <s1> can not be empty" << std::endl;
         return (1);
     }
-    std::ifstream fd(fileName);
+    std::ifstream fd(fileName.c_str());
     if (!fd.is_open())
     {
         std::cerr << "Error: cannot open file " << fileName << std::endl;
         return (1);
     }
-    std::ofstream newFd(fileName + ".replace");
+    std::ofstream newFd((fileName + ".replace").c_str());
     if (!newFd.is_open())
     {
         std::cerr << "Error: cannot open file " << fileName + ".replace" << std::endl;
