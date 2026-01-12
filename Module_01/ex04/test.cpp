@@ -107,9 +107,9 @@ void    runErrorTest(const std::string& testName,
 }
 
 int main(){
-    std::cout << " ----------------- " << std::endl;
-    std::cout << "|      TESTS      |" << std::endl;
-    std::cout << " ----------------- " << std::endl;
+    std::cout << " --------------------------------------------- " << std::endl;
+    std::cout << "|                   TESTS                     |" << std::endl;
+    std::cout << " --------------------------------------------- " << std::endl;
    
     if (!fileExists("tests/test1.txt") || !fileExists("tests/test2.txt") || !fileExists("tests/test3.txt"))
     {
@@ -123,31 +123,31 @@ int main(){
             "123",
             "def",
             "abcdef");
-    std::cout << " --------------------------------------------- " << std::endl;
+    std::cout << "---------------------------------------------- " << std::endl;
     std::cout << "TEST 2 :" << std::endl;
     runTest("- Multiple replacements",
             "tests/test2.txt",
             "x",
             "l",
             "Hello world !");
-    std::cout << " --------------------------------------------- " << std::endl;
+    std::cout << "---------------------------------------------- " << std::endl;
     std::cout << "TEST 3 :" << std::endl;
     runTest("- Multi lines",
             "tests/test3.txt",
             "test",
             "TEST",
             "line1: TEST\nline2: Test\nline3: TESTTEST !");
-    std::cout << " --------------------------------------------- " << std::endl;
+    std::cout << "---------------------------------------------- " << std::endl;
     std::cout << "TEST 4 :" << std::endl;
     runErrorTest("- No input file",
             "./replace nonexistent.txt test TEST",
             "Error: cannot open file nonexistent.txt");
-    std::cout << " --------------------------------------------- " << std::endl;
+    std::cout << "---------------------------------------------- " << std::endl;
     std::cout << "TEST 5 :" << std::endl;
     runErrorTest("- Empty s1",
             "./replace tests/test1.txt \"\" TEST",
             "Filename and <s1> can not be empty");
-    std::cout << " --------------------------------------------- " << std::endl;
+    std::cout << "---------------------------------------------- " << std::endl;
     return (0);
         
 }
