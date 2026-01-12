@@ -18,15 +18,15 @@ $(NAME) : $(OBJS)
 $(TESTER): $(NAME) $(TEST_OBJS)
 	$(CXX) $(CXXFLAGS) $(TEST_OBJS) -o $(TEST)
 
-test: $(TEST)
-	./$(TEST)
+test: $(TESTER)
+	./$(TESTER)
 
 clean :
 	rm -rf $(OBJS) $(TEST_OBJ)
 	rm -f test1.txt.replace test2.txt.replace test3.txt.replace
 
 fclean : clean
-	rm -rf $(NAME) $(TEST)
+	rm -rf $(NAME) $(TESTER)
 	
 re : fclean all
 
