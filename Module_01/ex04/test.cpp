@@ -68,6 +68,44 @@ void    runTest(const std::string& testName,
     std::cout << std::endl;
 }
 
+void    runErrorTest(const std::string& testName,
+                     const std::string& cmd,
+                     const std::string& expectedError){
+    
+    std::cout << "Test " << testName << std::endl;
+    std::cout << "Command: " << cmd << std::endl;
+    std::cout << "-------------" << std::endl;
+    
+    std::string fullCmd = cmd + " 2>&1";
+    FILE* pipe = popen(fullCmd.c_str(), "r");
+    if (!pipe)
+    {
+        std::cerr << "FAIL: Could not execute command" << std::endl;
+        return;
+    }
+    char buffer[128];
+    std::string result = "";
+    while (fgets(buffer, sizeof(buffer), pipe) != NULL)
+        result += buffer;
+    pclose(pipe);
+    
+    // Enlever le dernier '\n' si présent
+    if (!result.empty() && result[result.length() - 1] == '\n')
+        result.erase(result.length() - 1);
+    
+    if (result == expectedError)
+        std::cout << "TEST PASSED!" << std::endl;
+    else
+    {
+        std::cout << "TEST FAIL!" << std::endl;
+        std::cout << "  Expected:" << std::endl;
+        std::cout << "  \"" << expectedError << "\"" << std::endl;
+        std::cout << "  Got:" << std::endl;
+        std::cout << "  \"" << result << "\"" << std::endl;
+    }
+    std::cout << std::endl;
+}
+
 int main(){
     std::cout << " ----------------- " << std::endl;
     std::cout << "|      TESTS      |" << std::endl;
@@ -101,18 +139,18 @@ int main(){
             "line1: TEST\nline2: Test\nline3: TESTTEST !");
     std::cout << " --------------------------------------------- " << std::endl;
     std::cout << "TEST 4 :" << std::endl;
-    runTest("- No input file",
+    runErrorTest("- No input file",
             "nonexistent.txt",
             "test",
             "TEST",
-            "");
+            "Error: cannot open file nonexistent.txt");
     std::cout << " --------------------------------------------- " << std::endl;
     std::cout << "TEST 5 :" << std::endl;
-    runTest("- Empty s1",
+    runErrorTest("- Empty s1",
             "tests/test1.txt",
             "",
             "TEST",
-            "");
+            "Filename and <s1> can not be empty");
     std::cout << " --------------------------------------------- " << std::endl;
     return (0);
         
