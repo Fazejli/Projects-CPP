@@ -53,7 +53,10 @@ void    runTest(const std::string& testName,
     std::string result = readFile(outputFile);
     std::cout << "Result:" << std::endl;
     if (result == expectedOutput)
-        std::cout << "TEST PASSED!" << std::endl;
+    {
+        std::cout << "\t\tTEST PASSED!" << std::endl;
+        std::cout << "\"" << result << "\"" << std::endl;
+    }
     else
     {
         std::cout << "TEST FAIL!" << std::endl;
