@@ -16,7 +16,7 @@ $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(TESTER): $(NAME) $(TEST_OBJS)
-	$(CXX) $(CXXFLAGS) $(TEST_OBJS) -o $(TEST)
+	$(CXX) $(CXXFLAGS) $(TEST_OBJS) -o $(TESTER)
 
 test: $(TESTER)
 	./$(TESTER)
