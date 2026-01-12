@@ -26,7 +26,7 @@ Module 01 of the C++ curriculum focuses on memory management, the difference bet
 
 ## ⚙️ Requirements
 
-- **Compiler:** `c++` (or `g++`)
+- **Compiler:** `c++`
 - **Standard:** C++98
 - **Compilation flags:** `-Wall -Wextra -Werror -std=c++98`
 
