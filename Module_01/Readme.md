@@ -26,7 +26,7 @@ Module 01 of the C++ curriculum focuses on memory management, the difference bet
 
 ## ⚙️ Requirements
 
-- **Compiler:** `c++` (or `g++`)
+- **Compiler:** `c++`
 - **Standard:** C++98
 - **Compilation flags:** `-Wall -Wextra -Werror -std=c++98`
 
@@ -217,81 +217,6 @@ Create a file string replacement program.
 
 ---
 
-### Exercise 05: Harl 2.0
-
-**Turn-in files:** `Makefile`, `main.cpp`, `Harl.{h,hpp}`, `Harl.cpp`
-
-Automate Harl's complaints using pointers to member functions.
-
-**Harl's complaint levels:**
-
-| Level | Description | Example |
-|-------|-------------|---------|
-| DEBUG | Problem diagnosis info | "I love having extra bacon for my 7XL-double-cheese..." |
-| INFO | Extensive execution info | "I cannot believe adding extra bacon costs more money..." |
-| WARNING | Potential issue | "I think I deserve to have some extra bacon for free..." |
-| ERROR | Unrecoverable error | "This is unacceptable! I want to speak to the manager now." |
-
-**Harl class:**
-```cpp
-private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
-public:
-    void complain(std::string level);
-```
-
-**Important:** Must use **pointers to member functions**!
-- No forest of `if/else if/else`
-- Harl doesn't think twice!
-
-**Concepts learned:**
-- Pointers to member functions
-- Function pointer arrays
-- Clean code architecture
-- Avoiding repetitive conditionals
-
----
-
-### Exercise 06: Harl filter
-
-**Turn-in files:** `Makefile`, `main.cpp`, `Harl.{h,hpp}`, `Harl.cpp`
-
-**⚠️ OPTIONAL EXERCISE** (not mandatory to pass the module)
-
-Filter Harl's complaints by log level.
-
-**Usage:**
-```bash
-./harlFilter "WARNING"
-```
-
-**Output:**
-```
-[ WARNING ]
-I think I deserve to have some extra bacon for free...
-
-[ ERROR ]
-This is unacceptable! I want to speak to the manager now.
-```
-
-**Behavior:**
-- Display all messages from the specified level **and above**
-- Use a **switch statement** (the goal of this exercise!)
-- Handle invalid inputs: `[ Probably complaining about insignificant problems ]`
-
-**Executable name:** `harlFilter`
-
-**Concepts learned:**
-- Switch statements
-- Fall-through behavior
-- Log level filtering
-- Command-line argument handling
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -324,17 +249,13 @@ Module01/
 ├── ex04/
 │   ├── Makefile
 │   ├── main.cpp
-│   └── [additional files]
-├── ex05/
-│   ├── Makefile
-│   ├── main.cpp
-│   ├── Harl.hpp
-│   └── Harl.cpp
-├── ex06/                    # Optional
-│   ├── Makefile
-│   ├── main.cpp
-│   ├── Harl.hpp
-│   └── Harl.cpp
+│   ├── test.cpp
+│   └── tests/
+│       ├── test1.txt
+│       ├── test2.txt
+│       └── test3.txt
+├── ex05/ (Not done yet)
+├── ex06/ (Not done yet)
 └── README.md
 ```
 
