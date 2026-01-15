@@ -44,11 +44,14 @@ int ClapTrap::getAttackDamage(){
  return (this->_attackDamage);
 }
 
-
 ClapTrap& ClapTrap::operator=(ClapTrap & other){
 	std::cout << "Assignment operator called" << std::endl;
-	if (this != &other)
+	if (this != &other){
 		this->_name = other.getName();
+		this->_hitPoints = other.getHitPoints();
+		this->_energyPoints = other.getNrjPoints();
+		this->-attackDamage = other.getAttackDamage();
+ }
 	return (*this);
 }
 
@@ -68,8 +71,14 @@ void	ClapTrap::attack(const std::string& name){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	(void) amount;
-	std::cout << "takeDamage" << std::endl;
+	if (this->_energyPoints > 0){
+			std::cout << this->_name << " has been attacked";
+   std::cout << amount << " times. Energy left: ";
+		 this->_energyPoints -= amount;
+			std::cout << this->_energyPoints << std::endl;
+	else if (this->_energyPoints <=0){
+   std::cout << this->_name;
+			std::cout << " has no nrj points left" << std::endl;}
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
