@@ -9,7 +9,7 @@ class ClapTrap{
 	public:
 
 		ClapTrap(void); //Default constructor
-		ClapTrap(ClapTrap const & src) const; //Copy constructor
+		ClapTrap(ClapTrap const & src); //Copy constructor
 		ClapTrap(std::string name); //Assignation constructor
 		~ClapTrap(); //Destructor
 
