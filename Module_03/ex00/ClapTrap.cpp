@@ -39,6 +39,34 @@ ClapTrap& ClapTrap::operator=(ClapTrap & other){
 	return (*this);
 }
 
+void	ClapTrap::attack(const std::string& name){
+	if (this->_hitPoints && this->_energyPoints){
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " attacks " << name;
+		std::cout << ", causing ";
+		std::cout << " 1 points of damage!" << std::endl;
+		this->_energyPoints--;
+	}
+	else{
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " can't attack " << name;
+		std:: cout << ". Not enough energy points." << std::endl;
+	}
+	(void)this->_attackDamage;
+}
+
+void ClapTrap::takeDamage(unsigned int amount){
+	(void) amount;
+	std::cout << "takeDamage" << std::endl;
+}
+
+void ClapTrap::beRepaired(unsigned int amount){
+	(void) amount;
+	std::cout << "takeDamage" << std::endl;
+}
+
+
+
 /*
 std::ostream & operator<<(std::ostream & o, ClapTrap const & i){
 	o << i.getName();
