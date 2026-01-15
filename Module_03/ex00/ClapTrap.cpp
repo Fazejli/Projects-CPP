@@ -32,6 +32,19 @@ std::string ClapTrap::getName(){
 	return (this->_name);
 }
 
+int ClapTrap::getHitPoints(){
+ return (this->_hitPoints);
+}
+
+int ClapTrap::getNrjPoints(){
+ return (this->_energyPoints);
+}
+
+int ClapTrap::getAttackDamage(){
+ return (this->_attackDamage);
+}
+
+
 ClapTrap& ClapTrap::operator=(ClapTrap & other){
 	std::cout << "Assignment operator called" << std::endl;
 	if (this != &other)
@@ -43,16 +56,15 @@ void	ClapTrap::attack(const std::string& name){
 	if (this->_hitPoints && this->_energyPoints){
 		std::cout << "ClapTrap " << this->_name;
 		std::cout << " attacks " << name;
-		std::cout << ", causing ";
-		std::cout << " 1 points of damage!" << std::endl;
+		std::cout << ", causing " << this->_attackDamage;
+		std::cout << " points of damage!" << std::endl;
 		this->_energyPoints--;
 	}
 	else{
 		std::cout << "ClapTrap " << this->_name;
 		std::cout << " can't attack " << name;
-		std:: cout << ". Not enough energy points." << std::endl;
+		std:: cout << ". Not enough points." << std::endl;
 	}
-	(void)this->_attackDamage;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
