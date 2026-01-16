@@ -19,6 +19,10 @@ class ClapTrap{
 		int			getNrjPoints() const;
 		int			getAttackDamage() const;
 
+		void		setHitPoints(int hp) ;
+		void		setNrjPoints(int energy) ;
+		void		setAttackDamage(int damage) ;
+
 		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

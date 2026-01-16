@@ -3,11 +3,16 @@
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Robot constructor called and ";
 	std::cout << this->_name << " is created." << std::endl;
+	setAttackDamage(20);
+	setHitPoints(100);
+	setNrjPoints(50);
 }
 
-ScavTrap::ScavTrap() : ClapTrap(){
-	std::cout << "Robot default constructor called and ";
-	std::cout << this->_name << " is created." << std::endl;
+ScavTrap::ScavTrap() : ClapTrap() {
+	std::cout << "Robot default constructor called." << std::endl;
+	setAttackDamage(20);
+	setHitPoints(100);
+	setNrjPoints(50);
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src){
@@ -16,7 +21,7 @@ ScavTrap::ScavTrap(ScavTrap const & src){
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & other){
-	std::cout << "Robot assignment operator called." << std::endl;
+	//std::cout << "Robot assignment operator called." << std::endl;
 	if (this != &other){
 		this->_name = other.getName();
 		this->_hitPoints = other.getHitPoints();
@@ -36,12 +41,13 @@ void ScavTrap::guardGate(){
 }
 
 void ScavTrap::attack(const std::string& target){
-	std::cout << "ScavTrap " << this->_name;
-	std::cout << " attacks " << target;
-	std::cout << "\n" << std::endl;
+	std::cout << "ScavTrap " << this->getName();
+	std::cout << " attacks " << target ;
+	std::cout << " causing " << this->getAttackDamage();
+	std::cout << " points of damage." << std::endl;
 }
 
-/*std::ostream & operator<<(std::ostream & o, ScavTrap const & i){
+std::ostream & operator<<(std::ostream & o, ScavTrap const & i){
 	o << i.getNrjPoints();
 	return (o);
-}*/
+}

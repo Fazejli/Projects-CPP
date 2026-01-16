@@ -12,13 +12,12 @@ class ScavTrap : public ClapTrap {
 		ScavTrap();
 		~ScavTrap();
 
-		ScavTrap & operator=(ScavTrap const & other);
-		void guardGate();
-		virtual void attack(const std::string& target);
-		void	setNrj();
+		ScavTrap & 	operator=(ScavTrap const & other);
+		void 		guardGate();
+		void 		attack(const std::string& target);
 
 };
 
-//std::ostream & operator<<(std::ostream & o, ScavTrap const & i);
+std::ostream & operator<<(std::ostream & o, ScavTrap const & i);
 
 #endif
