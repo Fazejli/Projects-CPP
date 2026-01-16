@@ -3,11 +3,11 @@
 /* PRINT MSG EXAMPLE: */
 /*	ClapTrap <name> attacks <target>, causing <damage> points of damage! */
 
-ClapTrap::ClapTrap() : _name("Default_player"),
+ClapTrap::ClapTrap() : _name("player_000"),
 					_hitPoints(10),
 					_energyPoints(10),
 					_attackDamage(0){
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name),
@@ -15,52 +15,51 @@ ClapTrap::ClapTrap(std::string name) : _name(name),
 										_energyPoints(10),
 										_attackDamage(0){
 	std::cout << "Constructor called and " << this->_name;
-	std::cout << " is created" << std::endl;
+	std::cout << " is created." << std::endl;
+}
+
+ClapTrap::~ClapTrap(){
+	std::cout << "Destructor called." << std::endl;
+}
+
+std::string ClapTrap::getName() const{
+	return (this->_name);
+}
+
+int ClapTrap::getHitPoints() const{
+ return (this->_hitPoints);
+}
+
+int ClapTrap::getNrjPoints() const {
+ return (this->_energyPoints);
+}
+
+int ClapTrap::getAttackDamage() const {
+ return (this->_attackDamage);
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap const & other){
+	std::cout << "Assignment operator called." << std::endl;
+	if (this != &other){
+		this->_name = other.getName();
+		this->_hitPoints = other.getHitPoints();
+		this->_energyPoints = other.getNrjPoints();
+		this->_attackDamage = other.getAttackDamage();
+ 	}
+	return (*this);
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
-	std::cout << this->_name << " is created" << std::endl;
-}
-
-ClapTrap::~ClapTrap(){
-	std::cout << "Destructor called" << std::endl;
-}
-
-std::string ClapTrap::getName(){
-	return (this->_name);
-}
-
-int ClapTrap::getHitPoints(){
- return (this->_hitPoints);
-}
-
-int ClapTrap::getNrjPoints(){
- return (this->_energyPoints);
-}
-
-int ClapTrap::getAttackDamage(){
- return (this->_attackDamage);
-}
-
-ClapTrap& ClapTrap::operator=(ClapTrap & other){
-	std::cout << "Assignment operator called" << std::endl;
-	if (this != &other){
-		this->_name = other.getName();
-		this->_hitPoints = other.getHitPoints();
-		this->_energyPoints = other.getNrjPoints();
-		this->-attackDamage = other.getAttackDamage();
- }
-	return (*this);
+	//std::cout << this->_name << " is created" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& name){
-	if (this->_hitPoints && this->_energyPoints){
+	if (this->_hitPoints > 0 && this->_energyPoints > 0){
 		std::cout << "ClapTrap " << this->_name;
 		std::cout << " attacks " << name;
-		std::cout << ", causing " << this->_attackDamage;
-		std::cout << " points of damage!" << std::endl;
+		std::cout << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints--;
 	}
 	else{
@@ -71,25 +70,42 @@ void	ClapTrap::attack(const std::string& name){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	if (this->_energyPoints > 0){
-			std::cout << this->_name << " has been attacked";
-   std::cout << amount << " times. Energy left: ";
-		 this->_energyPoints -= amount;
-			std::cout << this->_energyPoints << std::endl;
-	else if (this->_energyPoints <=0){
-   std::cout << this->_name;
-			std::cout << " has no nrj points left" << std::endl;}
+	if (this->_energyPoints > 0)
+	{
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " has been attacked, losing ";
+   		std::cout << amount << " energy points." << std::endl;
+		this->_attackDamage += amount;
+		this->_energyPoints -= amount;
+	}
+	else if (this->_energyPoints <= 0)
+	{
+   		std::cout << "ClapTrap " << this->_name;
+		std::cout << " has no energy points left" << std::endl;
+	}
+	if (this->_energyPoints < 0)
+		this->_energyPoints = 0;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	(void) amount;
-	std::cout << "takeDamage" << std::endl;
+	if (this->_energyPoints > 0)
+	{
+		std::cout << "ClapTrap " << this->_name;
+		std::cout << " has been repaired, gaining ";
+   		std::cout << amount << " hitpoint." << std::endl;
+		this->_hitPoints += amount;
+		this->_energyPoints--;
+	}
+	if (this->_energyPoints <= 0)
+	{
+   		std::cout << "ClapTrap " << this->_name;
+		std::cout << " has no energy points left" << std::endl;
+	}
+	if (this->_energyPoints < 0)
+		this->_energyPoints = 0;
 }
 
-
-
-/*
 std::ostream & operator<<(std::ostream & o, ClapTrap const & i){
-	o << i.getName();
+	o << i.getNrjPoints();
 	return (o);
-}*/
+}

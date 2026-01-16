@@ -13,9 +13,13 @@ class ClapTrap{
 		ClapTrap(std::string name); //Assignation constructor
 		~ClapTrap(); //Destructor
 
-		ClapTrap & operator=(ClapTrap &other); //Assignation overload
+		ClapTrap & operator=(ClapTrap const & other); //Assignation overload
 
-		std::string getName();
+		std::string getName() const;
+		int			getHitPoints() const;
+		int			getNrjPoints() const;
+		int			getAttackDamage() const;
+
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
@@ -29,9 +33,6 @@ class ClapTrap{
 
 };
 
-//std::ostream & operator<<(std::ostream & o, ClapTrap const & i);
+std::ostream & operator<<(std::ostream & o, ClapTrap const & i);
 
 #endif
-
-/* PRINT MSG EXAMPLE: */
-/*	ClapTrap <name> attacks <target>, causing <damage> points of damage! */
