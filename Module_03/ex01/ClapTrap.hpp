@@ -7,25 +7,23 @@
 class ClapTrap{
 
 	public:
-
 		ClapTrap(void); //Default constructor
 		ClapTrap(ClapTrap const & src); //Copy constructor
 		ClapTrap(std::string name); //Assignation constructor
-		~ClapTrap(); //Destructor
+		virtual ~ClapTrap(); //Destructor
 
-		virtual ClapTrap & operator=(ClapTrap const & other); //Assignation overload
+		ClapTrap & operator=(ClapTrap const & other); //Assignation overload
 
-		virtual std::string getName() const;
-		virtual int			getHitPoints() const;
-		virtual int			getNrjPoints() const;
-		virtual int			getAttackDamage() const;
+		std::string getName() const;
+		int			getHitPoints() const;
+		int			getNrjPoints() const;
+		int			getAttackDamage() const;
 
 		virtual void attack(const std::string& target);
-		virtual void takeDamage(unsigned int amount);
-		virtual void beRepaired(unsigned int amount);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
 	protected:
-
 		std::string _name;
 		int			_hitPoints;
 		int			_energyPoints;

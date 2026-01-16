@@ -7,13 +7,18 @@
 
 class ScavTrap : public ClapTrap {
 	public:
-		ScavTrap();
 		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const & src);
+		ScavTrap();
 		~ScavTrap();
 
+		ScavTrap & operator=(ScavTrap const & other);
 		void guardGate();
-	private:
-		std::string _name;
+		virtual void attack(const std::string& target);
+		void	setNrj();
+
 };
+
+//std::ostream & operator<<(std::ostream & o, ScavTrap const & i);
 
 #endif

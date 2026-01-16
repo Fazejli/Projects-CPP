@@ -4,9 +4,9 @@
 /*	ClapTrap <name> attacks <target>, causing <damage> points of damage! */
 
 ClapTrap::ClapTrap() : _name("default_player"),
-					_hitPoints(100),
-					_energyPoints(50),
-					_attackDamage(20){
+					_hitPoints(10),
+					_energyPoints(10),
+					_attackDamage(1){
 	std::cout << "Default constructor called." << std::endl;
 }
 
