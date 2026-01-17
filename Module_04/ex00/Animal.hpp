@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:29:30 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 14:00:20 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:16:36 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Animal {
 		Animal();
 		Animal(std::string type);
 		Animal(Animal const & src);
-		~Animal();
+		virtual ~Animal();
 
 		Animal & 				operator=(Animal const & other);
 		std::string 			getType() const;

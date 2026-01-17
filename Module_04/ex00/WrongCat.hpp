@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 14:08:05 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 14:08:51 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:16:58 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class WrongCat : public WrongAnimal{
 		~WrongCat();
 
 		WrongCat & operator=(WrongCat const & other);
+		void			makeSound() const;
 	private:
 		std::string _name;
 };

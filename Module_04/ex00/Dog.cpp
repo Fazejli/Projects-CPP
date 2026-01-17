@@ -6,14 +6,14 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:42:58 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 14:10:41 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:28:35 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 
-Dog::Dog() : Animal(){
+Dog::Dog() : Animal(), _name("Unknown"){
 	std::cout << "Dog default constructor called." << std::endl;
 	this->setType("Dog");
 }
@@ -23,7 +23,7 @@ Dog::Dog(std::string name) : Animal(), _name(name){
 	this->setType("Dog");
 }
 
-Dog::Dog(Dog const & src) : Animal(){
+Dog::Dog(Dog const & src) : Animal(src), _name(src._name){
 	std::cout << "Dog copy constructor called." << std::endl;
 	*this = src;
 	this->setType("Dog");
@@ -31,8 +31,9 @@ Dog::Dog(Dog const & src) : Animal(){
 
 Dog & Dog::operator=(Dog const &other){
 	//std::cout << "Assignation operator called." << std::endl;
-	if (this != &other)
+	if (this != &other){
 		this->_type = other.getType();
+		this->_name = other._name;}
 	return (*this);
 }
 
