@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:29:30 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:04:50 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:16:42 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
+#include "Brain.hpp"
 #include <iostream>
 #include <string>
 
-class Animal {
+class AAnimal {
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(Animal const & src);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(std::string type);
+		AAnimal(AAnimal const & src);
+		virtual ~AAnimal();
 
-		Animal & 				operator=(Animal const & other);
+		AAnimal & 				operator=(AAnimal const & other);
 		std::string 			getType() const;
 		void					setType(std::string type);
 		virtual void			makeSound() const;

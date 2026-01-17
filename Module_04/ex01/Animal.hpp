@@ -6,13 +6,14 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:29:30 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:04:50 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 16:35:23 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
+#include "Brain.hpp"
 #include <iostream>
 #include <string>
 

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 13:29:30 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:04:50 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/01/17 14:08:05 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/01/17 14:16:58 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include <iostream>
-#include <string>
+#include "WrongAnimal.hpp"
 
-class Animal {
+class WrongCat : public WrongAnimal{
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(Animal const & src);
-		virtual ~Animal();
+		WrongCat();
+		WrongCat(std::string name);
+		WrongCat(WrongCat const & src);
+		~WrongCat();
 
-		Animal & 				operator=(Animal const & other);
-		std::string 			getType() const;
-		void					setType(std::string type);
-		virtual void			makeSound() const;
-	protected:
-		std::string _type;
+		WrongCat & operator=(WrongCat const & other);
+		void			makeSound() const;
+	private:
+		std::string _name;
 };
 
 #endif

@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 13:29:30 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:04:50 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/01/17 15:36:09 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/01/17 17:11:07 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
+#include "AAnimal.hpp"
 #include <iostream>
-#include <string>
 
-class Animal {
+class Brain{
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(Animal const & src);
-		virtual ~Animal();
+		Brain();
+		~Brain();
+		Brain(Brain const & src);
 
-		Animal & 				operator=(Animal const & other);
-		std::string 			getType() const;
-		void					setType(std::string type);
-		virtual void			makeSound() const;
-	protected:
-		std::string _type;
+		Brain & operator=(Brain const & other);
+		std::string getIdea(int index) const;
+		void setIdea(int index, std::string idea);
+	private:
+		std::string ideas[100];
 };
 
 #endif
