@@ -14,12 +14,12 @@ ClapTrap::ClapTrap(std::string name) : _name(name),
 										_hitPoints(10),
 										_energyPoints(10),
 										_attackDamage(1){
-	std::cout << "ClapTap constructor called and " << this->_name;
+	std::cout << "ClapTrap constructor called and " << this->_name;
 	std::cout << " is created." << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap destroyed." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " is destroyed." << std::endl;
 }
 // Getters //
 std::string ClapTrap::getName() const{

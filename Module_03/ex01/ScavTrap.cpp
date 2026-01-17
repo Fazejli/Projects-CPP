@@ -15,7 +15,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	setNrjPoints(50);
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src){
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src){
 	std::cout << "ScavTrap copy constructor called." << std::endl;
 	*this = src;
 }
@@ -32,7 +32,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & other){
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "ScavTrap destructor called." << std::endl;
+	std::cout << "ScavTrap " << this->_name << " is destroyed." << std::endl;
 }
 
 void ScavTrap::guardGate(){

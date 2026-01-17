@@ -2,7 +2,6 @@
 # define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 #include <iostream>
 #include <string>
 
@@ -13,9 +12,9 @@ class FragTrap : public ClapTrap {
 		FragTrap(std::string name);
 		~FragTrap();
 
-		void highFivesGuys(void);
+		FragTrap & operator=(FragTrap const & other);
 
-	private:
+		void highFivesGuys(void);
 };
 
 #endif

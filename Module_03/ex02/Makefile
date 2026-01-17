@@ -6,11 +6,11 @@
 #    By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/15 14:47:58 by fadzejli          #+#    #+#              #
-#    Updated: 2026/01/17 12:47:35 by fadzejli         ###   ########.fr        #
+#    Updated: 2026/01/17 12:55:19 by fadzejli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scavtrap
+NAME = fragtrap
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp

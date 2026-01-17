@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name),
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap destructor called." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " is destroyed." << std::endl;
 }
 // Getters //
 std::string ClapTrap::getName() const{
