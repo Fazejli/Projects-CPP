@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:29:28 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 17:11:37 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:23:04 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,6 @@ std::string AAnimal::getType() const {
 
 void AAnimal::setType(std::string type){
 	this->_type = type;	
-}
-
-void AAnimal::makeSound() const {
-	std::cout << "Default Aanimal sound: Rooooaaar 🦖 .." << std::endl;
 }
 
 AAnimal & AAnimal::operator=(AAnimal const & other){

@@ -6,14 +6,14 @@
 #    By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/17 13:21:51 by fadzejli          #+#    #+#              #
-#    Updated: 2026/01/17 16:22:05 by fadzejli         ###   ########.fr        #
+#    Updated: 2026/01/17 17:26:41 by fadzejli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brain
+NAME = abstract_checker
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp \
+SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp \
 	WrongAnimal.cpp WrongCat.cpp \
 	Brain.cpp
 OBJS = $(SRCS:.cpp=.o)

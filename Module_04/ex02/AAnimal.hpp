@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:29:30 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 17:16:42 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:23:41 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AAnimal {
 		AAnimal & 				operator=(AAnimal const & other);
 		std::string 			getType() const;
 		void					setType(std::string type);
-		virtual void			makeSound() const;
+		virtual void			makeSound() const = 0;
 	protected:
 		std::string _type;
 };
