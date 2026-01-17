@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	std::cout << "Robot constructor called and ";
+	std::cout << "ScavTrap constructor called and ";
 	std::cout << this->_name << " is created." << std::endl;
 	setAttackDamage(20);
 	setHitPoints(100);
@@ -9,19 +9,19 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap() : ClapTrap() {
-	std::cout << "Robot default constructor called." << std::endl;
+	std::cout << "ScavTrap default constructor called." << std::endl;
 	setAttackDamage(20);
 	setHitPoints(100);
 	setNrjPoints(50);
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src){
-	std::cout << "Robot copy constructor called." << std::endl;
+	std::cout << "ScavTrap copy constructor called." << std::endl;
 	*this = src;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & other){
-	//std::cout << "Robot assignment operator called." << std::endl;
+	//std::cout << "ScavTrap assignment operator called." << std::endl;
 	if (this != &other){
 		this->_name = other.getName();
 		this->_hitPoints = other.getHitPoints();
@@ -32,7 +32,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & other){
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "Robot destructor called." << std::endl;
+	std::cout << "ScavTrap destructor called." << std::endl;
 }
 
 void ScavTrap::guardGate(){

@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
 //Comment redefinir les attributs de l'enfant sans modifier le .cpp parent?
 int	main()

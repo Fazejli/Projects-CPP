@@ -3,9 +3,9 @@
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap constructor called and ";
 	std::cout << this->_name << " is created." << std::endl;
-	setAttackDamage(20);
+	setAttackDamage(30);
 	setHitPoints(100);
-	setNrjPoints(50);
+	setNrjPoints(100);
 }
 
 FragTrap::FragTrap() : ClapTrap() {
