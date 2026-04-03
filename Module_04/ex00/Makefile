@@ -6,23 +6,23 @@
 #    By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/17 13:21:51 by fadzejli          #+#    #+#              #
-#    Updated: 2026/01/17 14:25:53 by fadzejli         ###   ########.fr        #
+#    Updated: 2026/04/03 12:42:44 by fadzejli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zoo
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CPP = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CXX) $(CXXFLAGS) -I. $(OBJS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) -I. $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	$(CXX) $(CXXFLAGS) -I. -c $< -o $@
+	$(CPP) $(CPPFLAGS) -I. -c $< -o $@
 
 clean :
 	rm -rf $(OBJS)

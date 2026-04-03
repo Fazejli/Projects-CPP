@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 15:36:09 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 13:39:20 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/04/03 15:07:56 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/03 15:16:52 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
-#include "Animal.hpp"
+#include "AMateria.hpp"
+#include <string>
 #include <iostream>
 
-class Brain {
-	public:
-		Brain();
-		~Brain();
-		Brain(Brain const & src);
-
-		Brain & operator=(Brain const & other);
-		std::string getIdea(int index) const;
-		void setIdea(int index, std::string idea);
+class Cure : public AMateria {
 	private:
-		std::string ideas[100];
+		std::string _type;
+	public:
+		Cure();
+		Cure(const Cure & src);
+		virtual ~Cure();
+		
+		const Cure & operator=(const Cure &rhs);
+		Cure * clone(const Cure & rhs) const;
+		void use(ICharacter& target);
 };
 
 #endif

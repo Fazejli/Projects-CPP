@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:42:58 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 17:00:46 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 14:21:19 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog() : Animal(), _name("Unknown"){
 
 Dog::Dog(std::string name) : Animal(), _name(name){
 	this->_brain = new Brain();
-	std::cout << "Dog constructor called." << std::endl;
+	std::cout << "Dog assignation constructor called." << std::endl;
 	this->setType("Dog");
 }
 

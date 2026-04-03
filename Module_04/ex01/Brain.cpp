@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:47:48 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 17:01:21 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 14:28:05 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Brain::Brain(){
 	int i(0);
-	std::cout << "Brain default constructor." << std::endl;
+	std::cout << "Brain default constructor called." << std::endl;
 	while (i < 100)
 	{
 		ideas[i] = "";
@@ -24,7 +24,7 @@ Brain::Brain(){
 }
 
 Brain::Brain(Brain const & src){
-	std::cout << "Brain copy constructor." << std::endl;
+	std::cout << "Brain copy constructor called." << std::endl;
 	*this = src;
 }
 
@@ -33,7 +33,7 @@ Brain::~Brain(){
 }
 
 Brain & Brain::operator=(Brain const & other){
-	//std::cout << "Assignment called" << std::endl;
+	//std::cout << "Assignment operator called" << std::endl;
 	int i(0);
 	if (this != &other){
 		while (i < 100){
@@ -47,7 +47,7 @@ Brain & Brain::operator=(Brain const & other){
 std::string Brain::getIdea(int index) const{
 	if (index >= 0 && index < 100)
 		return (this->ideas[index]);
-	return ("");
+	return (NULL);
 }
 
 void Brain::setIdea(int index, std::string idea){

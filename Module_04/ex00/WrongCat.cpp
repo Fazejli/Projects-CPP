@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 14:08:21 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 14:53:23 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 13:12:17 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ WrongCat::WrongCat(std::string name) : WrongAnimal(), _name(name){
 	this->setType("WrongCat");
 }
 
-WrongCat::WrongCat(WrongCat const & src) : WrongAnimal(), _name(src._name){
+WrongCat::WrongCat(WrongCat const & src) : WrongAnimal(src), _name(src._name){
 	std::cout << "WrongCat copy constructor called." << std::endl;
 	*this = src;
 	this->setType("WrongCat");
@@ -38,7 +38,7 @@ WrongCat & WrongCat::operator=(WrongCat const &other){
 }
 
 void WrongCat::makeSound() const {
-    std::cout << "Wrong Miaaaouu 🐱 .." << std::endl;
+    std::cout << "NOOO Miaaaouu In HERE 🐱 .." << std::endl;
 }
 
 WrongCat::~WrongCat(){

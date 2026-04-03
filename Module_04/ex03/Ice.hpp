@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 15:36:09 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 13:39:20 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/04/03 15:19:43 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/03 15:20:11 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include "Animal.hpp"
+#include "AMateria.hpp"
+#include <string>
 #include <iostream>
 
-class Brain {
-	public:
-		Brain();
-		~Brain();
-		Brain(Brain const & src);
-
-		Brain & operator=(Brain const & other);
-		std::string getIdea(int index) const;
-		void setIdea(int index, std::string idea);
+class Ice : public AMateria {
 	private:
-		std::string ideas[100];
+		std::string _type;
+	public:
+		Ice();
+		Ice(const Ice & src);
+		virtual ~Ice();
+		
+		const Ice & operator=(const Ice &rhs);
+		Ice * clone(const Ice & rhs) const;
+		void use(ICharacter& target);
 };
 
 #endif

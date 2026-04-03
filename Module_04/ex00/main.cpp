@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:53:13 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:03:18 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 13:16:30 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,51 +16,51 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+int main()
+{
+	std::cout << "===== Basic Test =====" << std::endl;
+	const Animal* meta = new Animal();
+    std::cout << "Meta's type is: " << meta->getType() << ", and his sound is: ";
+    meta->makeSound();
+	std::cout << std::endl;
+	const Animal* Bobby = new Dog();
+	std::cout << "Bobby's type is: " << Bobby->getType() << ", and his sound is: ";
+    Bobby->makeSound();
+	std::cout << std::endl;
+	Animal* Garfield = new Cat();
+	std::cout << "Meta's type is: " << Garfield->getType() << ", and his sound is: ";
+    Garfield->makeSound();
+	std::cout << std::endl;
+    delete meta;
+    delete Bobby;
+	delete Garfield;
+	
+	std::cout << "\n===== More Tests =====" << std::endl;
+	WrongCat i("Jerry");
+	std::cout << "Jerry's type is: " << i.getType() << ", and his sound is: ";
+	i.makeSound();
+	std::cout << std::endl;
+	WrongAnimal *j = new WrongCat("Simba");
+	std::cout << "Simba's type is: " << j->getType() << ", and his sound is: ";
+	j->makeSound();
+	
+    delete j;
+	return 0;
+}
+
 /*int main()
 {
-	const Animal* meta = new Animal();
+	const WrongAnimal* meta = new WrongAnimal();
 	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const WrongAnimal* i = new WrongCat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
-	return 0;
+
+	delete meta;
+	delete i;
+	delete j;
+	return (0);
 }*/
-
-int main()
-{
-
-    std::cout << "=== Test 4: Copy Constructors ===" << std::endl;
-    {
-        Dog original("Buddy");
-        Dog copy(original);
-        
-        std::cout << "\nOriginal and copy:" << std::endl;
-        original.makeSound();
-        copy.makeSound();
-        
-        std::cout << "\nDestruction:" << std::endl;
-    }
-    
-    std::cout << "\n=== Test 5: Assignment Operator ===" << std::endl;
-    {
-        Cat cat1("Whiskers");
-        Cat cat2("Mittens");
-        
-        std::cout << "\nBefore assignment:" << std::endl;
-        std::cout << "cat1 type: " << cat1.getType() << std::endl;
-        std::cout << "cat2 type: " << cat2.getType() << std::endl;
-        
-        cat2 = cat1;
-        
-        std::cout << "\nAfter assignment:" << std::endl;
-        std::cout << "cat2 type: " << cat2.getType() << std::endl;
-        
-        std::cout << "\nDestruction:" << std::endl;
-    }
-    
-    std::cout << "\n=== All tests completed ===";
-    return 0;
-}

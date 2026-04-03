@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 14:03:43 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 14:06:48 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 13:15:32 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void WrongAnimal::setType(std::string type){
 }
 
 void WrongAnimal::makeSound() const {
-	std::cout << "WrongAnimal sound: Rooooaaar 🦖 .." << std::endl;
+	std::cout << "What am I ? .." << std::endl;
 }
 
 WrongAnimal & WrongAnimal::operator=(WrongAnimal const & other){

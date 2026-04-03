@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:42:58 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:00:38 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:39:44 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Dog::Dog() : Animal(), _name("Unknown"){
 	this->setType("Dog");
 }
 
-Dog::Dog(std::string name) : Animal(), _name(name){
-	std::cout << "Dog constructor called." << std::endl;
+Dog::Dog(std::string name) : Animal("Dog"), _name(name){
+	std::cout << "Dog assignation constructor called." << std::endl;
 	this->setType("Dog");
 }
 
-Dog::Dog(Dog const & src) : Animal(src), _name(src._name){
+Dog::Dog(Dog const & src) : Animal("Dog"), _name(src._name){
 	std::cout << "Dog copy constructor called." << std::endl;
 	this->setType("Dog");
 }
@@ -41,5 +41,5 @@ void Dog::makeSound() const {
 }
 
 Dog::~Dog(){
-	std::cout << "Dog " << this->_name << " is destroyed" << std::endl;
+	std::cout << "Dog " << this->_name << " is destroyed." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:41:17 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 15:04:23 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:36:25 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Animal.hpp"
 
-class Dog : public Animal{
+class Dog : public Animal {
 	public:
 		Dog();
 		Dog(std::string name);
