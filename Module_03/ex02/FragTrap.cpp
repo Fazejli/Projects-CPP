@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:26 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/02 14:52:27 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:25:57 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ FragTrap & FragTrap::operator=(FragTrap const & other){
 }
 
 void FragTrap::highFivesGuys(){
-	std::cout << "Gave five 🙏" << std::endl;
+	std::cout << "Fragtrap " << this->_name << " gave five 🙏" << std::endl;
 }

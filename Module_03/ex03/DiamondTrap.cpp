@@ -6,18 +6,18 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:50 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 12:18:08 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:23:35 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap(){
+DiamondTrap::DiamondTrap() : ClapTrap("default_d_clap_name"), FragTrap(), ScavTrap(){
 	std::cout << "DiamondTrap default constructor is called and ";
-	this->_name = "default";
+	this->_name = "default_d";
 	this->_hitPoints = FragTrap::getHitPoints();
 	this->_energyPoints = ScavTrap::getNrjPoints();
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_attackDamage = 30;
 	std::cout << this->_name << " is created." << std::endl;
 }
 
@@ -26,7 +26,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Frag
 	this->_name = name;
 	this->_hitPoints = FragTrap::getHitPoints();
 	this->_energyPoints = ScavTrap::getNrjPoints();
-	this->_attackDamage = FragTrap::getAttackDamage();
+	this->_attackDamage = 30;
 	std::cout << this->_name << " is created." << std::endl;
 }
 
