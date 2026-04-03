@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:59 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 10:50:56 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 11:51:09 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,32 @@
 
 int main()
 {
-	std::cout << "\n========== Basic Tests ==========" << std::endl;
+    std::cout << "========== General info ==========" << std::endl;
+    DiamondTrap d;
+    d.whoAmI();
+    std::cout << "EnergyPoint: " << d.getNrjPoints() << std::endl;
+    std::cout << "HitPoints: " << d.getHitPoints() << std::endl;
+    std::cout << "AttackDamage: " << d.getAttackDamage() << std::endl;
+    
+	std::cout << "\n\n========== Testing member functions ==========" << std::endl;
     DiamondTrap d1("Diamond");
 	std::cout << "DiamondTrap created: " << d1.getName() << std::endl;
 	d1.whoAmI();
-	d1.attack("Enemy");
+	d1.attack("Enemy"); // lost 1 nrj points
 	d1.guardGate();
 	d1.highFivesGuys();
-	d1.takeDamage(20);
-	d1.beRepaired(15);
+	d1.takeDamage(20); // lost 20 hp
+	d1.beRepaired(15); // lost 1 nrj point and gain 15 hp
     std::cout << d1.getName() << " has " << d1.getNrjPoints() << " nrj points left." << std::endl;
-	
-	std::cout << "\n========== Copy and Assignment Tests ==========" << std::endl;
+	std::cout << d1.getName() << " has " << d1.getHitPoints() << " hp left." << std::endl;
+    
+	/*std::cout << "\n\n========== Copy and Assignment Tests ==========" << std::endl;
 	DiamondTrap d2(d1);
 	std::cout << "DiamondTrap copied" << std::endl;
 	DiamondTrap d3("Another");
 	d3 = d1;
-	d3.whoAmI();
+	d3.whoAmI();*/
 	
-	std::cout << "\n========== End of Tests ==========" << std::endl;
+	std::cout << "\n\n========== End of Tests ==========" << std::endl;
 	return (0);
 }

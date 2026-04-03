@@ -6,28 +6,28 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:50 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 10:51:18 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 11:46:21 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap() , ScavTrap(){
-	std::cout << "DiamondTrap default constructor called." << std::endl;
-	ClapTrap::_name += "_clap_name";
+DiamondTrap::DiamondTrap() : ClapTrap("default_crap_name"), FragTrap() , ScavTrap(){
+	std::cout << "DiamondTrap default constructor called and " << std::endl;
 	this->_name = "default";
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
+	std::cout << this->_name << " is created." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name){
-	std::cout << "DiamondTrap default constructor called." << std::endl;
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_crap_name"), FragTrap(name), ScavTrap(name){
+	std::cout << "DiamondTrap assignation constructor called and " << std::endl;
 	this->_name = name;
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
-	ClapTrap::_name += "_clap_name";
+	std::cout << this->_name << " is created." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src), FragTrap(src), ScavTrap(src){
@@ -43,11 +43,10 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap const & othr){
 	//std::cout << "Operator assignation called" << std::endl;
 	if (this != &othr)
 	{
-		ClapTrap::_name += "_clap_name";
-		this->_name = othr.getName();
-		this->_hitPoints = othr.getHitPoints();
-		this->_energyPoints = othr.getNrjPoints();
-		this->_attackDamage = othr.getAttackDamage();
+		this->_name = othr._name;
+		this->_hitPoints = othr._hitPoints;
+		this->_energyPoints = othr._energyPoints;
+		this->_attackDamage = othr._attackDamage;
 	}
 	return (*this);
 }
