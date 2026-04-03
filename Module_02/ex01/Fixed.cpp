@@ -1,53 +1,54 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : _value(0){
-	std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const & src) {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+Fixed::~Fixed(){
+    std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(int const intNbr) {
-	std::cout << "Integer constructor called" << std::endl;
-	this->_value = intNbr << _nbBits;
+Fixed::Fixed(const Fixed &other){
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
 }
 
-Fixed::Fixed(float const floatNbr) : _value(floatNbr){
-	std::cout << "Float constructor called" << std::endl;
-	this->_value = roundf(floatNbr * (1 << _nbBits));
+Fixed::Fixed(const int nbr){
+    std::cout << "Int constructor called" << std::endl;
+    this->_value = nbr * 256 ;
 }
 
-float Fixed::toFloat(void) const{
-	return float(this->_value) / float(1 << _nbBits);
+Fixed::Fixed(const float nbr){
+    std::cout << "Float constructor called" << std::endl;
+    this->_value = roundf(nbr * 256);
 }
 
-int	Fixed::toInt(void) const{
-	return this->_value >> _nbBits;
+float   Fixed::toFloat(void) const {
+    return ((float)_value / 256);
 }
 
-Fixed::~Fixed(void){
-	std::cout << "Destructor called" << std::endl;
+int     Fixed::toInt(void) const {
+    return (_value / 256);
 }
 
-Fixed & Fixed::operator=( Fixed const & rhs){
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &rhs)
-		this->_value = rhs.getRawBits();
-	return (*this);
+Fixed & Fixed::operator=(const Fixed &other){
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &other)
+        this->_value = other.getRawBits();
+    return (*this);
 }
 
-int Fixed::getRawBits(void) const{
-	return this->_value;
+int Fixed::getRawBits(void) const {
+    std::cout << "getRawBits member function called" << std::endl;
+    return (this->_value);
 }
 
 void Fixed::setRawBits(int const raw){
-	this->_value = raw;
+    std::cout << "setRawBits member function called" << std::endl;
+    this->_value = raw;
 }
 
-std::ostream & operator<<(std::ostream & o, Fixed const & i){
-	o << i.toFloat();
-	return (o);
+std::ostream &operator<<(std::ostream &o, const Fixed &src){
+    o << src.toFloat();
+    return (o);
 }
-

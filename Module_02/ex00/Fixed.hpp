@@ -1,22 +1,24 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <iomanip>
 #include <iostream>
+#include <string>
 
-class Fixed{
-	public:
-		Fixed(void); //Default constructor
-		Fixed(Fixed & src); //Copy Constructor
-		~Fixed(void); //Destructor
 
-		Fixed & operator=( Fixed & rhs ); //Copy assignment operator overload
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+class Fixed {
+    public:
+        Fixed(void);
+        ~Fixed();
+        Fixed( Fixed &other);
 
-	private:
-		int	_fixedPointValue;
-		static int const _nbBits = 8;
+        const Fixed & operator=( Fixed &other);
+
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+
+    private:
+        int _value;
+        static const int _nbBits = 8;
 };
 
 #endif

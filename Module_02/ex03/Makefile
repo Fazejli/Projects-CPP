@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+         #
+#    By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/14 16:23:51 by fadzejli          #+#    #+#              #
-#    Updated: 2026/01/14 16:23:52 by fadzejli         ###   ########.fr        #
+#    Updated: 2026/03/02 03:16:09 by fadwa            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fixed
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)

@@ -112,7 +112,7 @@ Fixed &Fixed::max(Fixed &fp1, Fixed &fp2){
 }
 
 const Fixed &Fixed::max(const Fixed &fp1, const Fixed &fp2) {
-    if (fp1.toFloat() < fp2.toFloat())
+    if (fp1.toFloat() <= fp2.toFloat())
         return (fp2);
     return (fp1);
 }

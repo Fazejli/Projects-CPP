@@ -34,6 +34,7 @@ class Fixed {
         static Fixed &max(Fixed &fp1, Fixed &fp2);
         const static Fixed &max(const Fixed &fp1, const Fixed &fp2);
 
+
         Fixed &operator++(void);
         Fixed operator++(int);
         Fixed &operator--(void);

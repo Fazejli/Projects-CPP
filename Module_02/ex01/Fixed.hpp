@@ -1,30 +1,31 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <iomanip>
 #include <iostream>
+#include <string>
 #include <cmath>
 
-class Fixed{
-	public:
-		Fixed(void); //Default constructor
-		Fixed(int const intNbr); //Numerical Int Constructor
-		Fixed(float const floatNbr); //Numerical Float constructor
-		Fixed(Fixed const & src); //Copy Constructor
-		~Fixed(void); //Destructor
 
-		Fixed & operator=( Fixed const & rhs ); //Copy assignment operator overload
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+class Fixed {
+    public:
+        Fixed(void);
+        ~Fixed();
+        Fixed(const Fixed &other);
+        Fixed(const int nbr);
+        Fixed(const float nbr);
 
-		float toFloat(void) const;
-		int toInt(void) const;
+        float   toFloat(void) const;
+        int     toInt(void) const;
+        Fixed & operator=(const Fixed &other);
 
-	private:
-		int	_value;
-		static int const _nbBits = 8;
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+
+    private:
+        int _value;
+        static const int _nbBits = 8;
 };
 
-std::ostream & operator<<(std::ostream & o, Fixed const & i);
+std::ostream &operator<<(std::ostream &o, const Fixed &src);
 
 #endif
