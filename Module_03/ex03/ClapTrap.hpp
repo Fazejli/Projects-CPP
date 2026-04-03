@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/02 14:52:11 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 09:46:28 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/04/02 14:52:48 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/03 09:53:46 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class ClapTrap{
 
 	public:
-		ClapTrap(void); 
+		ClapTrap(void);
 		ClapTrap(ClapTrap const & src);
 		ClapTrap(std::string name);
 		virtual ~ClapTrap();
@@ -30,6 +30,10 @@ class ClapTrap{
 		int			getHitPoints() const;
 		int			getNrjPoints() const;
 		int			getAttackDamage() const;
+
+		void		setHitPoints(int hp) ;
+		void		setNrjPoints(int energy) ;
+		void		setAttackDamage(int damage) ;
 
 		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

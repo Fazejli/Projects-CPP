@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/02 14:52:24 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/02 14:52:25 by fadzejli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
@@ -7,12 +19,12 @@
 class ClapTrap{
 
 	public:
-		ClapTrap(void); //Default constructor
-		ClapTrap(ClapTrap const & src); //Copy constructor
-		ClapTrap(std::string name); //Assignation constructor
-		virtual ~ClapTrap(); //Destructor
+		ClapTrap(void);
+		ClapTrap(ClapTrap const & src);
+		ClapTrap(std::string name);
+		~ClapTrap();
 
-		ClapTrap & operator=(ClapTrap const & other); //Assignation overload
+		ClapTrap & operator=(ClapTrap const & other);
 
 		std::string getName() const;
 		int			getHitPoints() const;

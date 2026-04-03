@@ -6,14 +6,14 @@
 #    By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/15 14:47:58 by fadzejli          #+#    #+#              #
-#    Updated: 2026/04/02 12:20:09 by fadzejli         ###   ########.fr        #
+#    Updated: 2026/04/03 10:33:27 by fadzejli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
+NAME = diamontrap
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)

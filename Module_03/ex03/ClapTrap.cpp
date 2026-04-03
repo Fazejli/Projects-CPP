@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/02 14:52:08 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/02 14:52:09 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/04/02 14:52:42 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/02 14:52:47 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ ClapTrap::ClapTrap(std::string name) : _name(name),
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << this->_name << " is destroyed" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " is destroyed." << std::endl;
 }
+
 // Getters //
 std::string ClapTrap::getName() const{
 	return (this->_name);
@@ -46,6 +47,22 @@ int ClapTrap::getNrjPoints() const {
 int ClapTrap::getAttackDamage() const {
  return (this->_attackDamage);
 }
+
+// setters //
+
+void ClapTrap::setHitPoints(int hp) {
+	this->_hitPoints = hp;
+}
+
+void ClapTrap::setNrjPoints(int energy)  {
+	this->_energyPoints = energy;
+}
+
+void ClapTrap::setAttackDamage(int damage)  {
+	this->_attackDamage = damage;
+}
+
+/////
 
 ClapTrap& ClapTrap::operator=(ClapTrap const & other){
 	//std::cout << "Assignment operator called." << std::endl;

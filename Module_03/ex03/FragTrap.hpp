@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/02 14:52:28 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/02 14:52:29 by fadzejli         ###   ########.fr       */
+/*   Created: 2026/04/02 14:52:57 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/03 10:07:12 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include <iostream>
 #include <string>
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	public:
 		FragTrap();
 		FragTrap(FragTrap const & src);
 		FragTrap(std::string name);
-		~FragTrap();
+		virtual ~FragTrap();
 
 		FragTrap & operator=(FragTrap const & other);
 

@@ -6,23 +6,23 @@
 #    By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/15 14:47:58 by fadzejli          #+#    #+#              #
-#    Updated: 2026/01/17 12:55:19 by fadzejli         ###   ########.fr        #
+#    Updated: 2026/04/02 12:20:31 by fadzejli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fragtrap
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CPP = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CXX) $(CXXFLAGS) -I. $(OBJS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) -I. $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	$(CXX) $(CXXFLAGS) -I. -c $< -o $@
+	$(CPP) $(CPPFLAGS) -I. -c $< -o $@
 
 clean :
 	rm -f $(OBJS)

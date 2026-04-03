@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/02 14:52:03 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/02 14:52:04 by fadzejli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 /*int	main()
@@ -42,11 +54,9 @@
 	return (0);
 }*/
 
-#include "ClapTrap.hpp"
-
 int main()
 {
-    std::cout << "=== Test 1: Basic Construction ===" << std::endl;
+    std::cout << "\t=== Test 1: Basic Construction ===" << std::endl;
     ClapTrap a("Alice");
     
     std::cout << "\n=== Test 2: Copy Constructor ===" << std::endl;
@@ -57,40 +67,46 @@ int main()
     
     std::cout << "\n=== Test 4: Assignment Operator ===" << std::endl;
     c = a;
+    //std::cout << "Claptrap a is called: " << a.getName() << std::endl;
+    //std::cout << "Claptrap c is called: " << c.getName() << std::endl;
     
     std::cout << "\n=== Test 5: Basic Attack ===" << std::endl;
+    std::cout << a.getName() << " energy before attack: " << a.getNrjPoints() << std::endl;
     a.attack("Bob");
-    std::cout << "Energy after attack: " << a.getNrjPoints() << std::endl;
+    std::cout << a.getName() << " energy after attack: " << a.getNrjPoints() << std::endl;
     
     std::cout << "\n=== Test 6: Take Damage ===" << std::endl;
-    std::cout << "HP before: " << a.getHitPoints() << std::endl;
+    std::cout << "HitPoints before: " << a.getHitPoints() << std::endl;
     a.takeDamage(5);
-    std::cout << "HP after: " << a.getHitPoints() << std::endl;
+    std::cout << "HitPoints after: " << a.getHitPoints() << std::endl;
     
     std::cout << "\n=== Test 7: Repair ===" << std::endl;
-    std::cout << "HP before: " << a.getHitPoints() << std::endl;
+    std::cout << "HitPoints before: " << a.getHitPoints() << std::endl;
     std::cout << "Energy before: " << a.getNrjPoints() << std::endl;
     a.beRepaired(3);
-    std::cout << "HP after: " << a.getHitPoints() << std::endl;
+    std::cout << "HitPoints after: " << a.getHitPoints() << std::endl;
     std::cout << "Energy after: " << a.getNrjPoints() << std::endl;
     
-    std::cout << "\n=== Test 8: Energy Depletion ===" << std::endl;
+    std::cout << "\n=== Test 8: Attack/Repair without energy ===" << std::endl;
     ClapTrap d("David");
-    for (int i = 0; i < 10; i++)
-        d.attack("target");
-    std::cout << "Energy: " << d.getNrjPoints() << std::endl;
-    std::cout << "Trying to attack with 0 energy:" << std::endl;
-    d.attack("target");
-    std::cout << "Trying to repair with 0 energy:" << std::endl;
-    d.beRepaired(5);
+    for (int i = 1; i <= 10; i++)
+    {
+        std::cout << i << " attack: ";
+        d.attack("Target");
+    }
+    std::cout << d.getName() << " actual energy: " << d.getNrjPoints() << std::endl;
+    std::cout << d.getName() << " trying to attack:" << std::endl;
+    d.attack("Target");
+    std::cout << d.getName() << " trying to get repaired: " << std::endl;
+    d.beRepaired(10);
     
-    std::cout << "\n=== Test 9: Death (0 HP) ===" << std::endl;
+    std::cout << "\n=== Test 9: Death ===" << std::endl;
     ClapTrap e("Eric");
-    std::cout << "HP: " << e.getHitPoints() << std::endl;
+    std::cout << e.getName() << " HitPoints: " << e.getHitPoints() << std::endl;
     e.takeDamage(10);
-    std::cout << "HP: " << e.getHitPoints() << std::endl;
-    std::cout << "Trying to attack with 0 HP:" << std::endl;
-    e.attack("target");
+    std::cout << e.getName() << " HitPoints: " << e.getHitPoints() << std::endl;
+    std::cout << e.getName() << " trying to attack:" << std::endl;
+    e.attack("Target");
     
     std::cout << "\n=== Test 10: Destructors ===" << std::endl;
     return 0;
