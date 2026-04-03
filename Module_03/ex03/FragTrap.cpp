@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:54 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/02 14:52:55 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 11:54:09 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 
 FragTrap::FragTrap() : ClapTrap() {
 	std::cout << "FragTrap default constructor called." << std::endl;
-	setAttackDamage(30);
+	this->_attackDamage = 30;
 	setHitPoints(100);
 	setNrjPoints(100);
 }

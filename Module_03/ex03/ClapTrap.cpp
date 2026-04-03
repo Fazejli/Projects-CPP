@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:42 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/02 14:52:47 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:08:18 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int ClapTrap::getNrjPoints() const {
  return (this->_energyPoints);
 }
 
-int ClapTrap::getAttackDamage() const {
+int ClapTrap::getAttackDamage() const{
  return (this->_attackDamage);
 }
 

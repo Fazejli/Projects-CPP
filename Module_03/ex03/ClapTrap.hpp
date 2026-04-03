@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:48 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 09:53:46 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:08:08 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class ClapTrap{
 		void		setNrjPoints(int energy) ;
 		void		setAttackDamage(int damage) ;
 
-		virtual void attack(const std::string& target);
+		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 

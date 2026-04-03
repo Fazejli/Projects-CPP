@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:52 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 10:23:06 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:03:09 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class DiamondTrap : public FragTrap, public ScavTrap{
 		virtual ~DiamondTrap();
 		
 		DiamondTrap& operator=(DiamondTrap const & othr);
+		void attack(std::string target);
 		void whoAmI();
 };
 

@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:59 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 11:51:09 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:06:39 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int main()
     
 	std::cout << "\n\n========== Testing member functions ==========" << std::endl;
     DiamondTrap d1("Diamond");
-	std::cout << "DiamondTrap created: " << d1.getName() << std::endl;
 	d1.whoAmI();
 	d1.attack("Enemy"); // lost 1 nrj points
 	d1.guardGate();

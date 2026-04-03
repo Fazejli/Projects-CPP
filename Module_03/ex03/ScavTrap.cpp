@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:53:04 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/02 14:53:05 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 11:54:26 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap constructor called and ";
 	std::cout << this->_name << " is created." << std::endl;
-	setAttackDamage(20);
+	this->_attackDamage = 20;
 	setHitPoints(100);
 	setNrjPoints(50);
 }
 
 ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout << "ScavTrap default constructor called." << std::endl;
-	setAttackDamage(20);
+	this->_attackDamage = 20;
 	setHitPoints(100);
 	setNrjPoints(50);
 }

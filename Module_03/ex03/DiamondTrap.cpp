@@ -6,27 +6,27 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 14:52:50 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 11:46:21 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:06:15 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("default_crap_name"), FragTrap() , ScavTrap(){
-	std::cout << "DiamondTrap default constructor called and " << std::endl;
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"){
+	std::cout << "DiamondTrap default constructor is called and ";
 	this->_name = "default";
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_hitPoints = FragTrap::getHitPoints();
+	this->_energyPoints = ScavTrap::getNrjPoints();
+	this->_attackDamage = FragTrap::getAttackDamage();
 	std::cout << this->_name << " is created." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_crap_name"), FragTrap(name), ScavTrap(name){
-	std::cout << "DiamondTrap assignation constructor called and " << std::endl;
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name){
+	std::cout << "DiamondTrap assignation constructor is called and ";
 	this->_name = name;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_hitPoints = FragTrap::getHitPoints();
+	this->_energyPoints = ScavTrap::getNrjPoints();
+	this->_attackDamage = FragTrap::getAttackDamage();
 	std::cout << this->_name << " is created." << std::endl;
 }
 
@@ -36,7 +36,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src), FragTrap(src),
 }
 
 DiamondTrap::~DiamondTrap(){
-	std::cout << "DiamondTrap default destructor called." << std::endl;
+	std::cout << "DiamondTrap default destructor called and " << this->_name;
+	std::cout << " is destroyed." << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(DiamondTrap const & othr){
@@ -53,5 +54,9 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap const & othr){
 
 void DiamondTrap::whoAmI(){
 	std::cout << "My name is " << this->_name << " and My ClapTrap's name is ";
-	std::cout << ClapTrap::getName() << std::endl;
+	std::cout << ClapTrap::_name << std::endl;
+}
+
+void DiamondTrap::attack(std::string target){
+	ScavTrap::attack(target);
 }
