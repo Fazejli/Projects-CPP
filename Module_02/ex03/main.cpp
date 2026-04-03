@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Point.hpp"
 
-/*void printTriangle(Point const a, Point const b, Point const c, Point const p) {
+void printTriangle(Point const a, Point const b, Point const c, Point const p) {
     int width = 10;
     int height = 10;
 
@@ -21,7 +21,7 @@
         }
         std::cout << std::endl;
     }
-}*/
+}
 
 int main() {
     const Point a(1.0f, 1.0f);
@@ -31,13 +31,13 @@ int main() {
     const Point p2(4, 2);
     const Point p3(a);
    
-    //Point p4 = b;
-    //std::cout << "Coord Point p4(" << (int)p4.getXValue() << ", " << (int)p4.getYValue() << ")" << std::endl;
+    Point p4 = b;
+    std::cout << "Coord Point p4(" << (int)p4.getXValue() << ", " << (int)p4.getYValue() << ")" << std::endl;
 
     bool flag;
 
     //  TEST N_1 //
-    std::cout << "=>Test 1 - Basic (true): " << std::endl;
+    std::cout << "=>Test 1 - Basic: " << std::endl;
     std::cout << "Coord Point a(" << (int)a.getXValue() << ", " << (int)a.getYValue() << ")" << std::endl;
     std::cout << "Coord Point b(" << (int)b.getXValue() << ", " << (int)b.getYValue() << ")" << std::endl;
     std::cout << "Coord Point c(" << (int)c.getXValue() << ", " << (int)c.getYValue() << ")" << std::endl;
@@ -52,7 +52,7 @@ int main() {
     
 
     //  TEST N_2 //
-    std::cout << "\n=>Test 2 - Outside triangle (false): " << std::endl;
+    std::cout << "\n=>Test 2: " << std::endl;
     std::cout << "Coord Point a(" << (int)a.getXValue() << ", " << (int)a.getYValue() << ")" << std::endl;
     std::cout << "Coord Point b(" << (int)b.getXValue() << ", " << (int)b.getYValue() << ")" << std::endl;
     std::cout << "Coord Point c(" << (int)c.getXValue() << ", " << (int)c.getYValue() << ")" << std::endl;
@@ -66,7 +66,7 @@ int main() {
         std::cout << "Point outside triangle ABC or edge case" << std::endl;
     
     //  TEST N_3 //
-    std::cout << "\n=>Test 3 - Edge case (false): " << std::endl;
+    std::cout << "\n=>Test 3 - Edge case: " << std::endl;
     std::cout << "Coord Point a(" << (int)a.getXValue() << ", " << (int)a.getYValue() << ")" << std::endl;
     std::cout << "Coord Point b(" << (int)b.getXValue() << ", " << (int)b.getYValue() << ")" << std::endl;
     std::cout << "Coord Point c(" << (int)c.getXValue() << ", " << (int)c.getYValue() << ")" << std::endl;

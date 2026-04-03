@@ -24,10 +24,10 @@ class Fixed {
         bool operator==(Fixed other) const;
         bool operator!=(Fixed other) const;
 
-        float operator+( Fixed other) const;
-        float operator-( Fixed other) const;
-        float operator*( Fixed other) const;
-        float operator/( Fixed other) const;
+        Fixed operator+( Fixed other) const;
+        Fixed operator-( Fixed other) const;
+        Fixed operator*( Fixed other) const;
+        Fixed operator/( Fixed other) const;
 
         static Fixed &min(Fixed &fp1, Fixed &fp2);
         const static Fixed &min(const Fixed &fp1, const Fixed &fp2);

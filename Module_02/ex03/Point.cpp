@@ -17,7 +17,7 @@ Point::Point(const Point &src) : _x(src.getXValue()), _y(src.getYValue()){
 }
 
 Point& Point::operator=(const Point &src) {
-    std::cout << "operator overload called" << std::endl ;
+    //std::cout << "operator overload called" << std::endl ;
     (void)src;
     return (*this);
 }

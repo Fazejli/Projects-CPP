@@ -25,6 +25,5 @@ class Point {
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
-std::ostream &operator<<(std::ostream &o, const Point &otr);
 
 #endif

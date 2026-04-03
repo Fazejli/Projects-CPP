@@ -52,20 +52,20 @@ bool Fixed::operator!=(Fixed other) const{
     return (this->toFloat() != other.toFloat());
 }
 
-float Fixed::operator+(Fixed other) const {
+Fixed Fixed::operator+(Fixed other) const {
     return (this->toFloat() + other.toFloat());
     
 }
 
-float Fixed::operator-(Fixed other) const {
+Fixed Fixed::operator-(Fixed other) const {
     return (this->toFloat() - other.toFloat());
 }
 
-float Fixed::operator*(Fixed other) const {
+Fixed Fixed::operator*(Fixed other) const {
     return (this->toFloat() * other.toFloat());
 }
 
-float Fixed::operator/(Fixed other) const {
+Fixed Fixed::operator/(Fixed other) const {
     if (other.toFloat() != 0)
         return (this->toFloat() / other.toFloat());
     return (this->toFloat());
