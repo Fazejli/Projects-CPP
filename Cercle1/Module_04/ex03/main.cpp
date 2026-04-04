@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 14:45:55 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 14:53:39 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/04 00:38:32 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {

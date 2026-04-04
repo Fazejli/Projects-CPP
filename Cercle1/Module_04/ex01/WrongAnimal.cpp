@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 14:03:43 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 14:06:48 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/04 00:28:45 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ WrongAnimal::~WrongAnimal(){
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type){
 	std::cout << "WrongAnimal constructor called." << std::endl;
-	this->setType("_default");
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const & src){

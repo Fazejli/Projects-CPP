@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:47:48 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/03 14:28:05 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/04 00:29:15 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Brain & Brain::operator=(Brain const & other){
 std::string Brain::getIdea(int index) const{
 	if (index >= 0 && index < 100)
 		return (this->ideas[index]);
-	return (NULL);
+	return ("");
 }
 
 void Brain::setIdea(int index, std::string idea){
