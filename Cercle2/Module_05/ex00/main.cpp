@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:35 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/07 15:13:20 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:31:38 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ int main(){
 		Bureaucrat d = c;
 		std::cout << c << std::endl;
 		std::cout << d << std::endl;
+		std::cout << b-- << std::endl;
+		std::cout << b-- << std::endl;
+		std::cout << b-- << std::endl;
 	}
 	catch (const std::runtime_error & e){
 		std::cerr << "Erreur : " << e.what() << std::endl;
 	}
-	std::cout << b-- << std::endl;
-	std::cout << b-- << std::endl;
-	//std::cout << b-- << std::endl;
+	
 	std::cout << "Fin du prog" << std::endl;
 	return (0);
 }

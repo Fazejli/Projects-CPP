@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:37 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/07 15:13:02 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:30:45 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat & src) : _name(src._name), _grade(src._g
 Bureaucrat Bureaucrat::GradeTooHighException(void){
 	std::cout << "Invalid grade: Too High (out of range : 1 - 150)" << std::endl;
 	this->_grade = 1;
+	exit(1);
 	return (*this);
 }
 
 Bureaucrat Bureaucrat::GradeTooLowException(void){
 	std::cout << "Invalid grade: Too Low (out of range : 1 - 150)" << std::endl;
 	this->_grade = 150;
+	exit(1);
 	return (*this);
 }
 	
