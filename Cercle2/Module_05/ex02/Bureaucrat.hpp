@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:39 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 14:52:52 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:14:46 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ class Bureaucrat {
 			public:
 				const char * what() const throw(){
 					return("Invalid grade: Too Low (out of range : 1 - 150)");}};
-		void signAForm(AForm &f);
+		void signForm(AForm &f);
 		void executeForm(AForm const &form) const;
 	private:
 		const std::string _name;

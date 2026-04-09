@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 13:49:29 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 14:37:27 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:13:52 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PresidentialPardonForm : public AForm{
 
         PresidentialPardonForm & operator=(const PresidentialPardonForm & src);
 
-        void execute(Bureaucrat const & executor);
+        void execute(Bureaucrat const & executor) const;
         //EXEC => Informs that <target> has been pardoned by Zaphod Beeblebrox
 
 };

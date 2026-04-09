@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 13:50:18 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 14:37:06 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:21:26 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class RobotomyRequestForm : public AForm{
     private:
@@ -30,7 +31,7 @@ class RobotomyRequestForm : public AForm{
 
         RobotomyRequestForm & operator=(const RobotomyRequestForm & src);
 
-        void execute(Bureaucrat const & executor);
+        void execute(Bureaucrat const & executor) const;
         //EXEC => Makes some drilling noises, then informs that <target> has been robotomized
         //successfully 50% of the time. Otherwise, it informs that the robotomy failed.
 };

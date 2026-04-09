@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:22:35 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 14:51:36 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:13:47 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
     return (*this);
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor){
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() <= this->getExecGrade() && this->getSignStatus() == true){
         std::cout << this->_target << " has been pardoned bu Zaphod Beeblebrox" << std::endl;
         return ;

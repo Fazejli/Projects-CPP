@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:15:34 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 14:51:46 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:43:05 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,15 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
     return (*this);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor){
+std::string ShrubberyCreationForm::getTarget(void) const{
+    return (this->_target);
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() <= this->getExecGrade() && this->getSignStatus() == true)
     {
-        std::cout << "Creates a file <target>_shrubbery in the working directory and writes ASCII trees inside it." << std::endl;
+        std::ofstream f(this->getTarget() + "_shrubbery");
+        f << "file created, writes ASCII trees inside it" << std::endl;
         return ;
     }
     throw
