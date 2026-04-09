@@ -61,8 +61,8 @@ void AForm::beSigned(const Bureaucrat &b){
 }
 
 std::ostream &operator<<(std::ostream &o, const AForm & f){
-    std::cout << f.getName() << ", signature required grade: " << f.getSignGrade();
-    std::cout << ", execution required grade: " << f.getExecGrade();
-    std::cout << ". Signature status: " << f.getSignStatus() << ".";
+    o << f.getName() << ", signature required grade: " << f.getSignGrade();
+    o << ", execution required grade: " << f.getExecGrade();
+    o << ". Signature status: " << f.getSignStatus() << ".";
     return (o);
 }
