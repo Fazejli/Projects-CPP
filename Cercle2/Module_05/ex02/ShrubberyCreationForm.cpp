@@ -35,7 +35,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() <= this->getExecGrade() && this->getSignStatus() == true)
     {
         std::ofstream f(this->getTarget() + "_shrubbery");
-        f << "file created, writes ASCII trees inside it" << std::endl;
+        f << "    *\n   ***\n  *****\n *******\n    |\n" << std::endl;
         return ;
     }
     throw
