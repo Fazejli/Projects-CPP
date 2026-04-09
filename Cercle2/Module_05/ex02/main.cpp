@@ -3,7 +3,11 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+#include <cstdlib>
+#include <ctime>
+
 int main(){
+    std::srand(std::time(NULL));
     // Test ShrubberyCreationForm
     try {
         ShrubberyCreationForm shrub("home");
