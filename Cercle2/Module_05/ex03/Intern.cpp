@@ -1,0 +1,74 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/09 19:58:09 by fadzejli          #+#    #+#             */
+/*   Updated: 2026/04/09 20:08:24 by fadzejli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Intern.hpp"
+
+Intern::Intern(){}
+
+Intern::Intern(const Intern & s){
+    *this = s;
+}
+
+Intern::~Intern(){}
+
+Intern &Intern::operator=(const Intern & s){
+    (void)s;
+    return *this;
+}
+
+AForm *Intern::makeForm(std::string name, std::string target){
+    std::string name[3] = {
+        "robotomy request",
+        "shrubbery creation",
+        "presidential pardon"
+    };
+
+    
+}
+
+
+/*AForm* Intern::createShrubbery(std::string target) {
+    return new ShrubberyCreationForm(target);
+}
+
+AForm* Intern::createRobotomy(std::string target) {
+    return new RobotomyRequestForm(target);
+}
+
+AForm* Intern::createPresidential(std::string target) {
+    return new PresidentialPardonForm(target);
+}
+    
+AForm* Intern::makeForm(std::string formName, std::string target) {
+    std::string names[3] = {
+        "shrubbery creation",
+        "robotomy request",
+        "presidential pardon"
+    };
+
+    FormCreator creators[3] = {
+        &Intern::createShrubbery,
+        &Intern::createRobotomy,
+        &Intern::createPresidential
+    };
+
+    for (int i = 0; i < 3; i++) {
+        if (formName == names[i]) {
+            std::cout << "Intern creates " << formName << std::endl;
+            return creators[i](target);
+        }
+    }
+
+    std::cout << "Error: form \"" << formName << "\" does not exist." << std::endl;
+    return NULL;
+}
+*/
