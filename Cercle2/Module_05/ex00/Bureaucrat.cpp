@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:37 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/07 15:30:45 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:04:32 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat & src) : _name(src._name), _grade(src._g
 	else if (src.getGrade() < 1)
 		throw GradeTooHighException();
 	_grade = src._grade;
-}
-
-Bureaucrat Bureaucrat::GradeTooHighException(void){
-	std::cout << "Invalid grade: Too High (out of range : 1 - 150)" << std::endl;
-	this->_grade = 1;
-	exit(1);
-	return (*this);
-}
-
-Bureaucrat Bureaucrat::GradeTooLowException(void){
-	std::cout << "Invalid grade: Too Low (out of range : 1 - 150)" << std::endl;
-	this->_grade = 150;
-	exit(1);
-	return (*this);
 }
 	
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name){
@@ -64,10 +50,11 @@ int Bureaucrat::getGrade(void) const{
 	return (this->_grade);
 }
 
-
 //++i
 Bureaucrat &Bureaucrat::operator++(void){
 	this->_grade--;
+	if (this->_grade > 150)
+		this->_grade = 150;
 	return (*this);
 }
 
@@ -76,12 +63,16 @@ Bureaucrat Bureaucrat::operator++(int idx){
 	(void)idx;
 	Bureaucrat tmp(*this);
 	this->_grade--;
+	if (this->_grade > 150)
+		this->_grade = 150;
 	return (tmp);
 }
 
 //--i
 Bureaucrat &Bureaucrat::operator--(void){
 	this->_grade++;
+	if (this->_grade < 1)
+		this->_grade = 1;
 	return (*this);
 }
 
@@ -90,6 +81,8 @@ Bureaucrat Bureaucrat::operator--(int idx){
 	(void)idx;
 	Bureaucrat tmp(*this);
 	this->_grade++;
+	if (this->_grade < 1)
+		this->_grade = 1;
 	return (tmp);
 }
 

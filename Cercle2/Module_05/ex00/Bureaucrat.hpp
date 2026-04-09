@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:39 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/07 15:01:30 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:06:47 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,15 @@ class Bureaucrat {
 		
 		std::string getName(void) const;
 		int getGrade(void) const;
-		
-		Bureaucrat GradeTooHighException(void);
-		Bureaucrat GradeTooLowException(void);
-		
+
+		class GradeTooHighException : public std::exception{
+			public:
+        		const  char * what() const throw(){
+            		return("Invalid grade: Too High (out of range : 1 - 150)");}};
+		class GradeTooLowException : public std::exception {
+			public:
+				const char * what() const throw(){
+					return("Invalid grade: Too Low (out of range : 1 - 150)");}};
 	private:
 		const std::string _name;
 		int _grade;
