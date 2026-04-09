@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:37 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 11:53:06 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 13:42:41 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,18 @@ Bureaucrat Bureaucrat::operator--(int idx){
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &b){
 	o << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
 	return o;
+}
+
+void Bureaucrat::signForm(Form f){
+	try{
+		f.beSigned(*this);
+		std::cout << this->getName() << " signed " << f.getName() << std::endl;
+	}
+	catch (const std::exception & e){
+		std::cerr << this->getName() << " couldn't sign " << f.getName();
+		std::cerr << " because " << e.what() << std::endl;
+
+	}
 }
 
 Bureaucrat::~Bureaucrat(){}
