@@ -6,20 +6,20 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:39 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 13:59:45 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 14:52:52 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <string>
 #include <cmath>
 #include <iostream>
 #include <exception>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	public:
@@ -47,7 +47,8 @@ class Bureaucrat {
 			public:
 				const char * what() const throw(){
 					return("Invalid grade: Too Low (out of range : 1 - 150)");}};
-		void signForm(Form &f);
+		void signAForm(AForm &f);
+		void executeForm(AForm const &form) const;
 	private:
 		const std::string _name;
 		int _grade;
