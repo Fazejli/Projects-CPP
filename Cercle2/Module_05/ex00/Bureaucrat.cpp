@@ -6,7 +6,7 @@
 /*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 14:00:37 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 11:04:32 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:15:36 by fadzejli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int Bureaucrat::getGrade(void) const{
 Bureaucrat &Bureaucrat::operator++(void){
 	this->_grade--;
 	if (this->_grade > 150)
-		this->_grade = 150;
+		throw GradeTooLowException();
 	return (*this);
 }
 
@@ -64,7 +64,7 @@ Bureaucrat Bureaucrat::operator++(int idx){
 	Bureaucrat tmp(*this);
 	this->_grade--;
 	if (this->_grade > 150)
-		this->_grade = 150;
+		throw GradeTooLowException();
 	return (tmp);
 }
 
@@ -72,7 +72,7 @@ Bureaucrat Bureaucrat::operator++(int idx){
 Bureaucrat &Bureaucrat::operator--(void){
 	this->_grade++;
 	if (this->_grade < 1)
-		this->_grade = 1;
+		throw GradeTooHighException();
 	return (*this);
 }
 
@@ -82,7 +82,7 @@ Bureaucrat Bureaucrat::operator--(int idx){
 	Bureaucrat tmp(*this);
 	this->_grade++;
 	if (this->_grade < 1)
-		this->_grade = 1;
+		throw GradeTooHighException();
 	return (tmp);
 }
 
