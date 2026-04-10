@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:29:28 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/01/17 17:00:21 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/10 14:49:47 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ Animal::~Animal(){
 
 Animal::Animal(std::string type) : _type(type){
 	std::cout << "Animal constructor called." << std::endl;
-	this->setType("_default");
 }
 
 Animal::Animal(Animal const & src){
-	std::cout << "Animal copy constructor called." << std::endl;
+	std::cout << "Animal cop
 	*this = src;
 }
 
@@ -35,7 +34,7 @@ std::string Animal::getType() const {
 }
 
 void Animal::setType(std::string type){
-	this->_type = type;	
+	this->_type = type;
 }
 
 void Animal::makeSound() const {

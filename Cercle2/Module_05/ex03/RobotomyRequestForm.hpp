@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 13:50:18 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 15:21:26 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/10 15:11:07 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ class RobotomyRequestForm : public AForm{
         RobotomyRequestForm & operator=(const RobotomyRequestForm & src);
 
         void execute(Bureaucrat const & executor) const;
-        //EXEC => Makes some drilling noises, then informs that <target> has been robotomized
-        //successfully 50% of the time. Otherwise, it informs that the robotomy failed.
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 19:53:49 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 20:05:32 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/10 15:00:32 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <string>
 #include <iostream>
 
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
@@ -27,6 +30,12 @@ class Intern {
 
         Intern &operator=(const Intern & s);
         AForm *makeForm(std::string name, std::string target);
+    private:
+        typedef AForm* (*FormCreator)(std::string target);
+
+        static AForm* createShrubbery(std::string target);
+        static AForm* createRobotomy(std::string target);
+        static AForm* createPresidential(std::string target);
 };
 
 

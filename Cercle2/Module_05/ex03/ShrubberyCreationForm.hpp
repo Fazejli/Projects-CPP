@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fadzejli <fadzejli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 13:51:11 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/09 15:42:17 by fadzejli         ###   ########.fr       */
+/*   Updated: 2026/04/10 15:11:13 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ class ShrubberyCreationForm : public AForm{
         ShrubberyCreationForm & operator=(const ShrubberyCreationForm & src);
         
         void execute(Bureaucrat const & executor) const;
-        //EXEC => Creates a file <target>_shrubbery in the working directory
-        //and writes ASCII trees inside it.
 };
 
 #endif
