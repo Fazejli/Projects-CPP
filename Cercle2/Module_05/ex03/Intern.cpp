@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 19:58:09 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/10 14:59:58 by fadwa            ###   ########.fr       */
+/*   Updated: 2026/04/10 15:42:25 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,6 @@ Intern &Intern::operator=(const Intern & s){
     (void)s;
     return *this;
 }
-/*
-AForm *Intern::makeForm(std::string name, std::string target){
-    std::string formName[3] = {
-        "robotomy request",
-        "shrubbery creation",
-        "presidential pardon"
-    };
-}*/
 
 AForm* Intern::createShrubbery(std::string target) {
     return new ShrubberyCreationForm(target);
@@ -51,20 +43,17 @@ AForm* Intern::makeForm(std::string formName, std::string target) {
         "robotomy request",
         "presidential pardon"
     };
-
     FormCreator creators[3] = {
         &Intern::createShrubbery,
         &Intern::createRobotomy,
         &Intern::createPresidential
     };
-
     for (int i = 0; i < 3; i++) {
         if (formName == names[i]) {
             std::cout << "Intern creates " << formName << std::endl;
             return creators[i](target);
         }
     }
-
     std::cout << "Error: form \"" << formName << "\" does not exist." << std::endl;
     return NULL;
 }

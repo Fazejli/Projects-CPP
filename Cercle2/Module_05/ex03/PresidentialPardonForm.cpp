@@ -6,13 +6,13 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 14:22:35 by fadzejli          #+#    #+#             */
-/*   Updated: 2026/04/10 15:04:43 by fadwa            ###   ########.fr       */
+/*   Updated: 2026/04/10 15:39:59 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("default", 25, 5) , _target("default_target"){}
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5) , _target("default_target"){}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string name) : AForm("PresidentialPardonForm", 25, 5), _target(name) {}
 
@@ -22,16 +22,12 @@ PresidentialPardonForm::~PresidentialPardonForm(){}
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm & src){
     if (this != &src){
-    AForm::operator=(src);
-    this->_target = src._target;}
+        AForm::operator=(src);
+        this->_target = src._target;}
     return (*this);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
-    if (executor.getGrade() <= this->getExecGrade() && this->getSignStatus() == true){
-        std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-        return ;
-    }
-    throw
-        GradeTooLowException();
+    checkExecution(executor);
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

@@ -48,7 +48,14 @@ class AForm {
 				const char * what() const throw(){
 					return("Invalid grade: Too Low (out of range : 1 - 150)");}};
 
+        class FormNotSigned : public std::exception{
+            public:
+                const char * what() const throw(){
+                    return ("Form not signed.");
+                }
+        };
         void beSigned(const Bureaucrat & b);
+        void checkExecution(const Bureaucrat & executor) const;
         virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
